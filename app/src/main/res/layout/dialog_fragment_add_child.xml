@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="280dp"
+    android:layout_height="wrap_content"
+    android:layoutDirection="locale"
+    android:layout_gravity="center"
+    android:focusableInTouchMode="true">
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@android:color/transparent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:cardBackgroundColor="@color/activity_bg"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+                <TextView
+                    style="@style/DialogFragmentBody"
+                    android:layout_width="316dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_16dp"
+                    android:text="@string/add_new_child_info"
+                    android:textColor="@color/darkest_blue"
+                    android:textStyle="bold" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgAddChild"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/margin_4dp"
+                    android:background="@drawable/dialog_fragment_round_icon_background"
+                    android:src="@drawable/ideogram_child"
+                    app:civ_border_color="@color/darkest_blue"
+                    app:civ_border_width="@dimen/circular_image_border_small"
+                    tools:ignore="MissingClass" />
+
+                <EditText
+                    android:id="@+id/edtNewChildName"
+                    style="@style/DialogFragmentEditText"
+                    android:drawableStart="@drawable/ic_person"
+                    android:hint="@string/new_child_name"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/darkest_blue"
+                    android:textColorHint="@color/editText_Hint_Color" />
+
+
+                <EditText
+                    android:id="@+id/edtNewChildEmail"
+                    style="@style/DialogFragmentEditText"
+                    android:drawableStart="@drawable/ic_email"
+                    android:hint="@string/new_child_email"
+                    android:inputType="textEmailSubject"
+                    android:textColor="@color/darkest_blue"
+                    android:textColorHint="@color/editText_Hint_Color" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="@dimen/margin_8dp"
+                    android:layout_marginBottom="@dimen/margin_8dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnCancelAddChild"
+                        style="@style/DialogFragmentButtonCancel" />
+
+                    <Button
+                        android:id="@+id/btnAddChild"
+                        style="@style/DialogFragmentButtonOk" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
+</LinearLayout>

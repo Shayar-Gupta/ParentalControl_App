@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_bg"
+    android:layoutDirection="locale"
+    tools:context="activity.ModeSelectionActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="273dp"
+        android:layout_gravity="top"
+        android:layout_marginTop="@dimen/margin_128dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_to"
+            android:textAlignment="center"
+            android:textColor="@color/darkest_blue"
+            android:textSize="@dimen/text_size_32sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="149dp"
+            android:gravity="center"
+            android:layoutDirection="ltr"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/logo_canva_cutout"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_4dp"
+            android:text="@string/login_as"
+            android:textAlignment="center"
+            android:textColor="@color/darkest_blue"
+            android:textSize="@dimen/text_size_20sp" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="256dp"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="@dimen/margin_128dp"
+        android:layout_marginBottom="@dimen/margin_64dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center"
+            android:layout_marginStart="@dimen/margin_32dp"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgParentSignUp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/dialog_fragment_round_icon_background"
+                android:src="@drawable/parents_image"
+                app:civ_border_color="@color/darkest_blue"
+                app:civ_border_width="@dimen/circular_image_border_small"/>
+
+
+            <TextView
+                android:id="@+id/txtParentSignUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/parent"
+                android:textColor="@color/darkest_blue"
+                android:textSize="@dimen/text_size_18sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center"
+            android:layout_marginEnd="@dimen/margin_32dp"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgChildSignUp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="@dimen/margin_4dp"
+                android:background="@drawable/dialog_fragment_round_icon_background"
+                android:src="@drawable/ideogram_child"
+                app:civ_border_color="@color/darkest_blue"
+                app:civ_border_width="@dimen/circular_image_border_small"
+                tools:ignore="MissingClass" />
+
+            <TextView
+                android:id="@+id/txtChildSignUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/child"
+                android:textColor="@color/darkest_blue"
+                android:textSize="@dimen/text_size_16sp" />
+        </LinearLayout>
+    </FrameLayout>
+</FrameLayout>

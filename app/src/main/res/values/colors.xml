@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="light_wala_blue">#1E31FF</color>
+    <color name="gadegts_blue">#1ec0ff</color>
+    <color name="darkest_blue">#000435</color>
+    <color name="logo_dark_blue">#1213BD</color>
+    <color name="android_background">#72B8F6</color>
+    <color name="dark_blue">#5414EB</color>
+    <color name="cloud">#ecf0f1</color>
+    <color name="lightest_blue">#6de2ff</color>
+    <color name="hint_text_color">#00aad4</color>
+    <color name="red">#ee0003</color>
+    <color name="green">#006400</color>
+    <color name="blue">#2196F3</color>
+    <color name="light_blue">#03A9F4</color>
+    <color name="editText_Hint_Color">#44454B</color>
+    <color name="button_color">#398BD5</color>
+    <color name="activity_bg">#B7E9F7</color>
+    <color name="switch_red">#6E90B4</color>
+    <color name="blue1">#36d3ff</color>
+    <color name="green1">#39e75f</color>
+    <color name="blue2">#0ABAB5</color>
+    <color name="green2">#00ab41</color>
+</resources>

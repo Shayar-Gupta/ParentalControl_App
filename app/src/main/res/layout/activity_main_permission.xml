@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_gradiant"
+    android:orientation="vertical"
+    tools:context=".activity.MainPermissionActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp">
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="@dimen/margin_48dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="40dp"
+                android:orientation="vertical"
+                android:background="@drawable/round_back_setting"
+                android:padding = "15dp">
+
+
+                <!-- Group 1: Send SMS Permission -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="UseSwitchCompatOrMaterialXml">
+
+                    <ImageView
+                        android:id="@+id/imgsendSMS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/send_sms"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:id="@+id/edtSendSMS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/send_sms_permission"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_size_16sp"
+                        android:layout_toEndOf="@+id/imgsendSMS"
+                        android:textColor="@color/darkest_blue" />
+
+                    <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:switchMinWidth="50dp"
+                        android:padding="5dp"
+                        android:thumbTint="@drawable/switch_thumb_track_color"
+                        android:trackTint="@drawable/switch_thumb_track_color"/>
+                </RelativeLayout>
+
+
+                <!-- Group 2: Read SMS Permission  -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="UseSwitchCompatOrMaterialXml">
+
+                    <ImageView
+                        android:id="@+id/imgreadSMS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:src="@drawable/read_sms" />
+
+                    <TextView
+                        android:id="@+id/edtReadSMS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/read_sms_permission"
+                        android:textColor="@color/darkest_blue"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_size_16sp"
+                        android:layout_toEndOf="@+id/imgreadSMS"
+                        android:layout_marginStart="10dp"/>
+
+                    <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:switchMinWidth="50dp"
+                        android:padding="5dp"
+                        android:thumbTint="@drawable/switch_thumb_track_color"
+                        android:trackTint="@drawable/switch_thumb_track_color"/>
+                </RelativeLayout>
+
+
+                <!-- Group 3: Receive SMS Permission -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="UseSwitchCompatOrMaterialXml">
+
+                    <ImageView
+                        android:id="@+id/imgrecieveSMS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/recieve_sms"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:id="@+id/edtReceiveSMS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/receive_sms_permission"
+                        android:textColor="@color/darkest_blue"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_size_16sp"
+                        android:layout_toEndOf="@+id/imgrecieveSMS"
+                        android:layout_marginStart="10dp"/>
+
+                    <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:switchMinWidth="50dp"
+                        android:padding="5dp"
+                        android:thumbTint="@drawable/switch_thumb_track_color"
+                        android:trackTint="@drawable/switch_thumb_track_color"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="40dp"
+                android:orientation="vertical"
+                android:background="@drawable/round_back_setting"
+                android:padding = "15dp">
+
+
+                <!-- Group 4: Phone State Permission -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="UseSwitchCompatOrMaterialXml">
+
+                    <ImageView
+                        android:id="@+id/imgPhoneState"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/phone_state"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:id="@+id/edtPhoneState"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/phone_state_permission"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_size_16sp"
+                        android:layout_toEndOf="@+id/imgPhoneState"
+                        android:textColor="@color/darkest_blue" />
+
+                    <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:switchMinWidth="50dp"
+                        android:padding="5dp"
+                        android:thumbTint="@drawable/switch_thumb_track_color"
+                        android:trackTint="@drawable/switch_thumb_track_color"/>
+                </RelativeLayout>
+
+
+                <!-- Group 5: Read Call Log Permission  -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="UseSwitchCompatOrMaterialXml">
+
+                    <ImageView
+                        android:id="@+id/imgContactsLogs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:src="@drawable/contact_logs" />
+
+                    <TextView
+                        android:id="@+id/edtReadCallLogs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/read_call_log_permission"
+                        android:textColor="@color/darkest_blue"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_size_16sp"
+                        android:layout_toEndOf="@+id/imgContactsLogs"
+                        android:layout_marginStart="10dp"/>
+
+                    <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:switchMinWidth="50dp"
+                        android:padding="5dp"
+                        android:thumbTint="@drawable/switch_thumb_track_color"
+                        android:trackTint="@drawable/switch_thumb_track_color"/>
+                </RelativeLayout>
+
+
+                <!-- Group 6: Read Contacts Permission -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="UseSwitchCompatOrMaterialXml">
+
+                    <ImageView
+                        android:id="@+id/imgContacts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/contacts"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:id="@+id/edtReadContacts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/read_contacts_permission"
+                        android:textColor="@color/darkest_blue"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_size_16sp"
+                        android:layout_toEndOf="@+id/imgContacts"
+                        android:layout_marginStart="10dp"/>
+
+                    <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:switchMinWidth="50dp"
+                        android:padding="5dp"
+                        android:thumbTint="@drawable/switch_thumb_track_color"
+                        android:trackTint="@drawable/switch_thumb_track_color"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="40dp"
+                android:orientation="vertical"
+                android:background="@drawable/round_back_setting"
+                android:padding = "15dp">
+
+
+                <!-- Group 4: Phone State Permission -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="UseSwitchCompatOrMaterialXml">
+
+                    <ImageView
+                        android:id="@+id/imgWrite_settings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/write_settings"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:id="@+id/edtWriteSettings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/write_settings_permission"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_size_16sp"
+                        android:layout_toEndOf="@+id/imgWrite_settings"
+                        android:textColor="@color/darkest_blue" />
+
+                    <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:switchMinWidth="50dp"
+                        android:padding="5dp"
+                        android:thumbTint="@drawable/switch_thumb_track_color"
+                        android:trackTint="@drawable/switch_thumb_track_color"/>
+                </RelativeLayout>
+
+
+                <!-- Group 5: Read Call Log Permission  -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="UseSwitchCompatOrMaterialXml">
+
+                    <ImageView
+                        android:id="@+id/imgOverlay_Permission"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:src="@drawable/monitor_apps" />
+
+                    <TextView
+                        android:id="@+id/edtOverlayPermission"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/overlay_permission"
+                        android:textColor="@color/darkest_blue"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_size_16sp"
+                        android:layout_toEndOf="@+id/imgOverlay_Permission"
+                        android:layout_marginStart="10dp"/>
+
+                    <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:switchMinWidth="50dp"
+                        android:padding="5dp"
+                        android:thumbTint="@drawable/switch_thumb_track_color"
+                        android:trackTint="@drawable/switch_thumb_track_color"/>
+                </RelativeLayout>
+
+
+                <!-- Group 6: Read Contacts Permission -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="UseSwitchCompatOrMaterialXml">
+
+                    <ImageView
+                        android:id="@+id/imgpackage_usage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/upload_apps_info"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:id="@+id/edtPackageUsage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/package_usage_permission"
+                        android:textColor="@color/darkest_blue"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_size_16sp"
+                        android:layout_toEndOf="@+id/imgpackage_usage"
+                        android:layout_marginStart="10dp"/>
+
+                    <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:switchMinWidth="50dp"
+                        android:padding="5dp"
+                        android:thumbTint="@drawable/switch_thumb_track_color"
+                        android:trackTint="@drawable/switch_thumb_track_color"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="UseSwitchCompatOrMaterialXml">
+
+                    <ImageView
+                        android:id="@+id/imgDevice_admin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/phone_lock"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:id="@+id/edtDeviceAdmin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/device_admin_permission"
+                        android:textColor="@color/darkest_blue"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_size_16sp"
+                        android:layout_toEndOf="@+id/imgDevice_admin"
+                        android:layout_marginStart="10dp"/>
+
+                    <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:switchMinWidth="50dp"
+                        android:padding="5dp"
+                        android:thumbTint="@drawable/switch_thumb_track_color"
+                        android:trackTint="@drawable/switch_thumb_track_color"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="40dp"
+                android:orientation="vertical"
+                android:layout_marginBottom="@dimen/margin_48dp"
+                android:background="@drawable/round_back_setting"
+                android:padding="15dp">
+
+
+                <!-- Group 4: Phone State Permission -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="UseSwitchCompatOrMaterialXml">
+
+                    <ImageView
+                        android:id="@+id/imgLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/location"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:id="@+id/edtLocationPermission"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/location_permission"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_size_16sp"
+                        android:layout_toEndOf="@+id/imgLocation"
+                        android:textColor="@color/darkest_blue" />
+
+                    <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:switchMinWidth="50dp"
+                        android:padding="5dp"
+                        android:thumbTint="@drawable/switch_thumb_track_color"
+                        android:trackTint="@drawable/switch_thumb_track_color"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
