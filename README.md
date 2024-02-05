@@ -1,4 +1,3 @@
-#Output:
 ![Screenshot_2023-11-04-19-00-27-62](https://github.com/Shayar-Gupta/Nazar_GUI/assets/122802547/e3a22820-9e65-4340-aeac-269b327de7cf)
 ![Screenshot_2023-11-04-19-00-43-11](https://github.com/Shayar-Gupta/Nazar_GUI/assets/122802547/4f9e5aab-4c3a-4f5a-b813-cc8b494f9905)
 ![Screenshot_2023-11-04-19-00-55-43](https://github.com/Shayar-Gupta/Nazar_GUI/assets/122802547/6ef0a587-940c-4713-80cd-b78547f0329a)
