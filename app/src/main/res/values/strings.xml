@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Nazar</string>
     <string name="welcome_to">Welcome to</string>
+    <string name="id" translatable="false">817894282683-2f66mcir443nngrmstj8q7ifts54pnhm.apps.googleusercontent.com</string>
     <string name="login_as">You Are....?</string>
     <string name="parent">Parent</string>
     <string name="child">Child</string>
@@ -45,7 +46,7 @@
     <string name="new_password">New password</string>
     <string name="reenter_new_password">Re-enter new password</string>
     <string name="new_password_doesnt_match">New password doesn\'t match</string>
-    <string name="do_you_want_to_logout">Do you want to logout?</string>
+    <string name="enter_your_email_address">Please enter your email address to request a password reset.</string>
     <string name="confirm_logout">Are you sure you want to log out?</string>
     <string name="confirm">Confirm</string>
     <string name="settings">Settings</string>
@@ -75,4 +76,60 @@
     <string name="overlay_permission_explanation">This permission is needed to monitor other apps</string>
     <string name="package_usage_permission">Package usage permission</string>
     <string name="package_usage_permission_explanation">This permission is needed to allow nazar to get and upload your child\'s apps info</string>
-    </resources>
+    <string name="please_enter_this_child_parent_email">Please enter this child\'s parent email</string>
+    <string name="this_email_isnt_registered_as_parent">This email isn\'t registered as a parent</string>
+    <string name="a_moment_ago">A moment ago</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="minutes_ago">Mins ago</string>
+    <string name="authentication_failed">Authentication Failed</string>
+    <string name="authentication_succeeded">Authentication Succeeded</string>
+    <string name="enter_valid_email">Enter a valid email</string>
+    <string name="email_isnt_registered">Email isn\'t registered</string>
+    <string name="wrong_password">Wrong password</string>
+    <string name="loading">Loading…</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="email_is_already_in_use">Email is already in use</string>
+    <string name="weak_password">Weak password</string>
+    <string name="sign_up_falied">Signup Failed</string>
+    <string name="enter_valid_password">Enter a valid password</string>
+    <string name="image_uploaded_successfully">Image uploaded successfully</string>
+    <string name="image_upload_error">Image upload error</string>
+    <string name="name_validation">Enter a name less than 15 characters</string>
+    <string name="please_add_a_profile_image">Please add a profile image</string>
+    <string name="would_you_love_to_add_a_profile_image">Would you like to add a profile image?</string>
+    <string name="please_turn_on_the_gps">Please turn on the gps on</string>
+    <string name="you_re_offline_ncheck_your_connection_and_try_again">You\'re offline \nCheck your connection and try again</string>
+    <string name="verification_email_sent_it_may_be_within_your_drafts">Verification email sent</string>
+    <string name="please_download_google_play_services">Please download google play services</string>
+    <string name="password_reset_email_sent">Password reset email sent, it may be within your drafts</string>
+    <string name="web_filter" translatable="false">Web Filter</string>
+    <string name="deleted_the_app">has uninstalled the app.</string>
+    <string name="activity_log">Activity Log</string>
+    <string name="apps">Apps</string>
+    <string name="location">Location</string>
+    <string name="upper_dot_s" translatable="false">\'s</string>
+    <string name="device">device</string>
+    <string name="no_messages_received_yet">No messages received yet</string>
+    <string name="no_calls_received_yet">No calls received yet</string>
+    <string name="no_contacts_found">No contacts found</string>
+    <string name="contacts">Contacts</string>
+    <string name="messages">Messages</string>
+    <string name="calls">Calls</string>
+    <string name="web_filter_disabled" translatable="false">Web filter disabled</string>
+    <string name="web_filter_enabled" translatable="false">Web filter enabled</string>
+    <string name="phone_unlocked">Phone Unlocked</string>
+    <string name="phone_locked">Phone Locked</string>
+    <string name="lock_timer_set_after">Phone will be locked after</string>
+    <string name="hours">hours</string>
+    <string name="and">and</string>
+    <string name="minutes">minutes</string>
+    <string name="hh">HH</string>
+    <string name="colons">:</string>
+    <string name="mm">MM</string>
+    <string name="phone">phone</string>
+    <string name="now_or_after_a_period">now, or after a period of time?</string>
+    <string name="maximum_is_23_hours">Enter a valid hours, maximum is 23 hours</string>
+    <string name="maximum_is_59_minutes">Enter a valid minutes, maximum is 59 minutes</string>
+    <string name="lock">Lock</string>
+    <string name="child_app_name">App name</string>
+</resources>

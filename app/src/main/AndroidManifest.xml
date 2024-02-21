@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.aninterface">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,33 +15,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar"
         tools:targetApi="31">
+        <activity android:name=".activity.SettingsActivity" />
+        <activity android:name=".activity.AccountVerificationActivity" />
+        <activity android:name=".activity.ModeSelectionActivity" />
+        <activity android:name=".activity.MainPermissionActivity" />
+        <activity android:name=".activity.ParentSignedInActivity" />
+        <activity android:name=".activity.LoginActivity" />
         <activity
-            android:name=".activity.MainPermissionActivity"
-            android:exported="false" />
+            android:name=".activity.ChildDetailsActivity"
+            android:parentActivityName=".activity.ParentSignedInActivity" />
         <activity
-            android:name=".activity.ChildLoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.ChildSignUpActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.SettingsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.ParentSignedInActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.AccountVerificationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.ParentLoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.ParentSignUpActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.ModeSelectionActivity"
-            android:exported="false" />
+            android:name=".activity.SignUpActivity"
+            android:parentActivityName=".activity.LoginActivity" />
         <activity
             android:name=".activity.SplashActivity"
             android:exported="true"

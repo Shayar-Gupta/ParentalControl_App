@@ -2,6 +2,7 @@ package com.example.aninterface.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 
 import com.example.aninterface.R;
 
+@SuppressLint("CustomSplashScreen")
 public class SplashActivity extends AppCompatActivity {
     private static final int SPLASH_DURATION = 3000;
 
@@ -31,7 +33,7 @@ public class SplashActivity extends AppCompatActivity {
         canva_logo.setVisibility(ImageView.VISIBLE);
 
         new Handler().postDelayed(() -> {
-            startActivity(new Intent(SplashActivity.this, ModeSelectionActivity.class));
+            startActivity(new Intent(SplashActivity.this, LoginActivity.class));
             finish();
         }, SPLASH_DURATION);
     }

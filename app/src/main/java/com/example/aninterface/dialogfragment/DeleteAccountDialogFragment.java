@@ -14,7 +14,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.aninterface.R;
-import com.example.aninterface.activity.ParentSignUpActivity;
+import com.example.aninterface.activity.SignUpActivity;
 
 public class DeleteAccountDialogFragment extends DialogFragment {
 
@@ -52,7 +52,7 @@ public class DeleteAccountDialogFragment extends DialogFragment {
                     Toast.makeText(getContext(), "Your account has been successfully deleted!", Toast.LENGTH_SHORT).show();
 
                     // Launch SignUpActivity
-                    Intent intent = new Intent(getContext(), ParentSignUpActivity.class);
+                    Intent intent = new Intent(getContext(), SignUpActivity.class);
                     startActivity(intent);
                 }
             }
