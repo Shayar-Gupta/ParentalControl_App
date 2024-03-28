@@ -1,4 +1,4 @@
-package com.example.aninterface.Adapter;
+package com.example.aninterface.adapter;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;

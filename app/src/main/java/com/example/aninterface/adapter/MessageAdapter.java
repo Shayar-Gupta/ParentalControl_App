@@ -1,4 +1,4 @@
-package com.example.aninterface.Adapter;
+package com.example.aninterface.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

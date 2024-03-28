@@ -132,4 +132,11 @@
     <string name="maximum_is_59_minutes">Enter a valid minutes, maximum is 59 minutes</string>
     <string name="lock">Lock</string>
     <string name="child_app_name">App name</string>
+    <string name="sign_up_failed">sign up failed</string>
+    <string name="sign_up_success">sign up success</string>
+    <string name="enter_name">enter name</string>
+    <string name="enter_password">enter password</string>
+    <string name="enter_email">enter email</string>
+    <string name="parent_not_found">parent_not_found</string>
+    <string name="enter_parent_email">enter parent email</string>
 </resources>

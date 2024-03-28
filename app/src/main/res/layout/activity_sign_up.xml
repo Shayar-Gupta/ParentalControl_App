@@ -82,6 +82,14 @@
 
             </LinearLayout>
 
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone" />
+
             <Button
                 android:id="@+id/btnSignUp"
                 style="@style/OkButton"
@@ -93,57 +101,6 @@
                 android:layout_marginBottom="@dimen/margin_8dp"
                 android:text="@string/sign_up" />
 
-            <ProgressBar
-                android:id="@+id/progressBar"
-                style="?android:attr/progressBarStyle"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginBottom="20dp"
-                android:visibility="gone" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="16dp"
-                android:layout_marginStart="@dimen/margin_32dp"
-                android:layout_marginEnd="@dimen/margin_32dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <View
-                    android:layout_width="100dp"
-                    android:layout_height="1dp"
-                    android:layout_gravity="center"
-                    android:layout_margin="@dimen/margin_8dp"
-                    android:background="@color/darkest_blue" />
-
-                <TextView
-                    android:layout_width="68dp"
-                    android:layout_height="22dp"
-                    android:layout_gravity="center"
-                    android:layout_margin="@dimen/margin_8dp"
-                    android:gravity="center"
-                    android:text="@string/or"
-                    android:textColor="@color/darkest_blue"
-                  />
-
-                <View
-                    android:layout_width="100dp"
-                    android:layout_height="1dp"
-                    android:layout_gravity="center"
-                    android:layout_margin="@dimen/margin_8dp"
-                    android:background="@color/darkest_blue" />
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/btnSignUpWithGoogle"
-                style="@style/OkButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_32dp"
-                android:layout_marginTop="@dimen/margin_8dp"
-                android:layout_marginEnd="@dimen/margin_32dp"
-                android:layout_marginBottom="@dimen/margin_8dp"
-                android:text="@string/sign_up_with_google" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

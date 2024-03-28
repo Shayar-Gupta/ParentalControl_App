@@ -8,8 +8,7 @@
     android:focusableInTouchMode="true"
     android:gravity="center"
     android:layoutDirection="locale"
-    android:orientation="vertical"
-    tools:context=".activity.ParentSignUpActivity">
+    android:orientation="vertical">
 
     <ScrollView
         android:layout_width="fill_parent"

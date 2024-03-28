@@ -15,7 +15,7 @@ public class SharedPrefsUtils {
      */
     public static String getStringPreference(Context context, String key, String defValue) {
         String value = null;
-        SharedPreferences preferences = context.getSharedPreferences(Constant.KID_SAFE_PREFS, Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getSharedPreferences(Constant.NAZAR_PREFS, Context.MODE_PRIVATE);
         if (preferences != null) {
             value = preferences.getString(key, defValue);
         }
@@ -31,7 +31,7 @@ public class SharedPrefsUtils {
      * @return true if the new value was successfully written to persistent storage.
      */
     public static boolean setStringPreference(Context context, String key, String value) {
-        SharedPreferences preferences = context.getSharedPreferences(Constant.KID_SAFE_PREFS, Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getSharedPreferences(Constant.NAZAR_PREFS, Context.MODE_PRIVATE);
         if (preferences != null && !TextUtils.isEmpty(key)) {
             SharedPreferences.Editor editor = preferences.edit();
             editor.putString(key, value);
@@ -51,7 +51,7 @@ public class SharedPrefsUtils {
      */
     public static float getFloatPreference(Context context, String key, float defaultValue) {
         float value = defaultValue;
-        SharedPreferences preferences = context.getSharedPreferences(Constant.KID_SAFE_PREFS, Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getSharedPreferences(Constant.NAZAR_PREFS, Context.MODE_PRIVATE);
         if (preferences != null) {
             value = preferences.getFloat(key, defaultValue);
         }
@@ -67,7 +67,7 @@ public class SharedPrefsUtils {
      * @return true if the new value was successfully written to persistent storage.
      */
     public static boolean setFloatPreference(Context context, String key, float value) {
-        SharedPreferences preferences = context.getSharedPreferences(Constant.KID_SAFE_PREFS, Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getSharedPreferences(Constant.NAZAR_PREFS, Context.MODE_PRIVATE);
         if (preferences != null) {
             SharedPreferences.Editor editor = preferences.edit();
             editor.putFloat(key, value);
@@ -87,7 +87,7 @@ public class SharedPrefsUtils {
      */
     public static long getLongPreference(Context context, String key, long defaultValue) {
         long value = defaultValue;
-        SharedPreferences preferences = context.getSharedPreferences(Constant.KID_SAFE_PREFS, Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getSharedPreferences(Constant.NAZAR_PREFS, Context.MODE_PRIVATE);
         if (preferences != null) {
             value = preferences.getLong(key, defaultValue);
         }
@@ -103,7 +103,7 @@ public class SharedPrefsUtils {
      * @return true if the new value was successfully written to persistent storage.
      */
     public static boolean setLongPreference(Context context, String key, long value) {
-        SharedPreferences preferences = context.getSharedPreferences(Constant.KID_SAFE_PREFS, Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getSharedPreferences(Constant.NAZAR_PREFS, Context.MODE_PRIVATE);
         if (preferences != null) {
             SharedPreferences.Editor editor = preferences.edit();
             editor.putLong(key, value);
@@ -123,7 +123,7 @@ public class SharedPrefsUtils {
      */
     public static int getIntegerPreference(Context context, String key, int defaultValue) {
         int value = defaultValue;
-        SharedPreferences preferences = context.getSharedPreferences(Constant.KID_SAFE_PREFS, Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getSharedPreferences(Constant.NAZAR_PREFS, Context.MODE_PRIVATE);
         if (preferences != null) {
             value = preferences.getInt(key, defaultValue);
         }
@@ -139,7 +139,7 @@ public class SharedPrefsUtils {
      * @return true if the new value was successfully written to persistent storage.
      */
     public static boolean setIntegerPreference(Context context, String key, int value) {
-        SharedPreferences preferences = context.getSharedPreferences(Constant.KID_SAFE_PREFS, Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getSharedPreferences(Constant.NAZAR_PREFS, Context.MODE_PRIVATE);
         if (preferences != null) {
             SharedPreferences.Editor editor = preferences.edit();
             editor.putInt(key, value);
@@ -159,7 +159,7 @@ public class SharedPrefsUtils {
      */
     public static boolean getBooleanPreference(Context context, String key, boolean defaultValue) {
         boolean value = defaultValue;
-        SharedPreferences preferences = context.getSharedPreferences(Constant.KID_SAFE_PREFS, Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getSharedPreferences(Constant.NAZAR_PREFS, Context.MODE_PRIVATE);
         if (preferences != null) {
             value = preferences.getBoolean(key, defaultValue);
         }
@@ -175,7 +175,7 @@ public class SharedPrefsUtils {
      * @return true if the new value was successfully written to persistent storage.
      */
     public static boolean setBooleanPreference(Context context, String key, boolean value) {
-        SharedPreferences preferences = context.getSharedPreferences(Constant.KID_SAFE_PREFS, Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getSharedPreferences(Constant.NAZAR_PREFS, Context.MODE_PRIVATE);
         if (preferences != null) {
             SharedPreferences.Editor editor = preferences.edit();
             editor.putBoolean(key, value);

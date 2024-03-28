@@ -12,9 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
 
 import com.example.aninterface.R;
 import com.example.aninterface.dialogfragment.InformationDialogFragment;
@@ -56,7 +54,6 @@ public class LoginActivity extends AppCompatActivity implements OnPasswordResetL
     private CheckBox checkBoxRememberMe;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
-    private FragmentManager fragmentManager;
     private String uid;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
@@ -64,21 +61,16 @@ public class LoginActivity extends AppCompatActivity implements OnPasswordResetL
     private String passwordPrefs;
     private boolean autoLoginPrefs;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        fragmentManager = getSupportFragmentManager();
         LocaleUtils.setAppLanguage(this);
 
-
-        //FirebaseApp.initializeApp(this);
         auth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("users");
-
 
         txtLogInEmail = findViewById(R.id.txtLogInEmail);
         txtLogInPassword = findViewById(R.id.txtLogInPassword);
@@ -86,7 +78,6 @@ public class LoginActivity extends AppCompatActivity implements OnPasswordResetL
         progressBar = findViewById(R.id.progressBar);
 
         checkBoxRememberMe = findViewById(R.id.checkBoxRememberMe);
-        //progressBar.setVisibility(View.GONE);
 
         btnLogin = findViewById(R.id.btnLogin);
         txtSignUp = findViewById(R.id.txtSignUp);
@@ -135,19 +126,19 @@ public class LoginActivity extends AppCompatActivity implements OnPasswordResetL
 
         if (!Validators.isGooglePlayServicesAvailable(this)) {
             startInformationDialogFragment(getString(R.string.please_download_google_play_services));
-            //Toast.makeText(this, getString(R.string.please_download_google_play_services), Toast.LENGTH_SHORT).show();
-            btnLogin.setEnabled(false);
-            btnLogin.setClickable(false);
-            btnGoogleSignUp.setClickable(false);
-            btnGoogleSignUp.setClickable(false);
-            txtSignUp.setEnabled(false);
-            txtSignUp.setClickable(false);
-            txtForgotPassword.setEnabled(false);
-            txtForgotPassword.setClickable(false);
-            checkBoxRememberMe.setEnabled(false);
-            checkBoxRememberMe.setClickable(false);
+            disableLoginComponents();
         }
     }
+
+    private void disableLoginComponents() {
+        btnLogin.setEnabled(false); // Disable login button
+        btnGoogleSignUp.setEnabled(false); // Disable Google sign-up button
+        txtSignUp.setEnabled(false); // Disable sign-up text
+        txtForgotPassword.setEnabled(false); // Disable forgot password text
+        checkBoxRememberMe.setEnabled(false); // Disable remember me checkbox
+        // Disable other login-related components as needed
+    }
+
 
     @Override
     protected void onStart() {
@@ -164,14 +155,13 @@ public class LoginActivity extends AppCompatActivity implements OnPasswordResetL
         }
     }
 
-
     private void autoLogin() {
         SharedPrefsUtils.setBooleanPreference(this, Constant.AUTO_LOGIN, checkBoxRememberMe.isChecked());
         SharedPrefsUtils.setStringPreference(this, Constant.EMAIL, txtLogInEmail.getText().toString().toLowerCase());
         SharedPrefsUtils.setStringPreference(this, Constant.PASSWORD, txtLogInPassword.getText().toString());
-
     }
 
+    // Inside the login method
     private void login(String email, String password) {
         if (isValid()) {
             final LoadingDialogFragment loadingDialogFragment = new LoadingDialogFragment();
@@ -184,37 +174,40 @@ public class LoginActivity extends AppCompatActivity implements OnPasswordResetL
                         FirebaseUser user = auth.getCurrentUser();
                         String email = user.getEmail();
                         uid = user.getUid();
-                        Log.i(TAG, "onComplete: user: " + user.toString());
-                        Log.i(TAG, "onComplete: email: " + email);
-                        Log.i(TAG, "onComplete: uid: " + uid);
-                        //String email = txtLogInEmail.getText().toString();
-                        if (Validators.isVerified(user)) checkMode(email);
-                        else startAccountVerificationActivity();
+                        // No need to check for email verification here
+                        checkMode(email);
                     } else {
-                        String errorCode = null;
-                        try {
-                            errorCode = ((FirebaseAuthException) task.getException()).getErrorCode();
-                        } catch (ClassCastException e) {
-                            e.printStackTrace();
-                        }
-                        switch (errorCode) {
-                            case "ERROR_INVALID_EMAIL":
-                                txtLogInEmail.setError(getString(R.string.enter_valid_email));
-                                break;
-                            case "ERROR_USER_NOT_FOUND":
-                                txtLogInEmail.setError(getString(R.string.email_isnt_registered));
-                                break;
-                            case "ERROR_WRONG_PASSWORD":
-                                txtLogInPassword.setError(getString(R.string.wrong_password));
-                                break;
-                            default:
-                                Toast.makeText(LoginActivity.this, getString(R.string.authentication_failed), Toast.LENGTH_SHORT).show();
-                        }
+                        // Handle login failure
+                        Toast.makeText(LoginActivity.this, getString(R.string.authentication_failed), Toast.LENGTH_SHORT).show();
                     }
                 }
             });
         }
     }
+
+    // Inside the checkMode method
+    private void checkMode(String email) {
+        final LoadingDialogFragment loadingDialogFragment = new LoadingDialogFragment();
+        startLoadingFragment(loadingDialogFragment);
+        Query query = databaseReference.child("parents").orderByChild("email").equalTo(email);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                loadingDialogFragment.dismiss();
+                if (dataSnapshot.exists()) {
+                    startParentSignedInActivity();
+                } else {
+                    startChildSignedInActivity();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.i(TAG, "onCancelled: canceled");
+            }
+        });
+    }
+
 
     private boolean isValid() {
         if (!Validators.isValidEmail(txtLogInEmail.getText().toString())) {
@@ -248,62 +241,35 @@ public class LoginActivity extends AppCompatActivity implements OnPasswordResetL
 
     private void startLoadingFragment(LoadingDialogFragment loadingDialogFragment) {
         loadingDialogFragment.setCancelable(false);
-        loadingDialogFragment.show(fragmentManager, Constant.LOADING_FRAGMENT);
+        loadingDialogFragment.show(getSupportFragmentManager(), Constant.LOADING_FRAGMENT);
     }
 
     private void stopLoadingFragment(LoadingDialogFragment loadingDialogFragment) {
         loadingDialogFragment.dismiss();
     }
 
-    private void checkMode(String email) {
-        final LoadingDialogFragment loadingDialogFragment = new LoadingDialogFragment();
-        startLoadingFragment(loadingDialogFragment);
-        Query query = databaseReference.child("parents").orderByChild("email").equalTo(email);
-        query.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                loadingDialogFragment.dismiss();
-                if (dataSnapshot.exists()) {
-                    startParentSignedInActivity();
-                } else {
-                    startChildSignedInActivity();
-                }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.i(TAG, "onCancelled: canceled");
-            }
-        });
-    }
 
     private void startParentSignedInActivity() {
         Intent intent = new Intent(this, ParentSignedInActivity.class);
         startActivity(intent);
+        finish(); // Finish the current LoginActivity so user can't go back to it after logging in
     }
 
     private void startChildSignedInActivity() {
         Intent intent = new Intent(this, ChildSignedInActivity.class);
         startActivity(intent);
-    }
-
-    private void startAccountVerificationActivity() {
-        Intent intent = new Intent(this, AccountVerificationActivity.class);
-        startActivity(intent);
+        finish(); // Finish the current LoginActivity so user can't go back to it after logging in
     }
 
     private void startModeSelectionActivity() {
         Intent intent = new Intent(this, ModeSelectionActivity.class);
         startActivity(intent);
-        /*Intent intent = new Intent(this, SignUpActivity.class);
-        startActivity(intent);*/
+        finish(); // Finish the current LoginActivity so user can't go back to it after logging in
     }
 
     private void sendPasswordRecoveryEmail() {
         RecoverPasswordDialogFragment recoverPasswordDialogFragment = new RecoverPasswordDialogFragment();
         recoverPasswordDialogFragment.setCancelable(false);
-        recoverPasswordDialogFragment.show(fragmentManager, Constant.RECOVER_PASSWORD_FRAGMENT);
     }
 
     private void signInWithGoogle() {
@@ -314,25 +280,6 @@ public class LoginActivity extends AppCompatActivity implements OnPasswordResetL
             startActivityForResult(signInIntent, Constant.RC_SIGN_IN);
         } else
             startInformationDialogFragment(getResources().getString(R.string.you_re_offline_ncheck_your_connection_and_try_again));
-
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == Constant.RC_SIGN_IN) {
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            try {
-                // Google Sign In was successful, authenticate with Firebase
-                GoogleSignInAccount account = task.getResult(ApiException.class);
-                firebaseAuthWithGoogle(account);
-            } catch (ApiException e) {
-                // Google Sign In failed, update UI appropriately
-                Toast.makeText(this, getString(R.string.authentication_failed), Toast.LENGTH_SHORT).show();
-                Log.i(TAG, "Google sign in failed", e);
-            }
-        }
     }
 
     private void firebaseAuthWithGoogle(GoogleSignInAccount account) {
@@ -346,7 +293,6 @@ public class LoginActivity extends AppCompatActivity implements OnPasswordResetL
                     Toast.makeText(LoginActivity.this, getString(R.string.authentication_succeeded), Toast.LENGTH_SHORT).show();
                     FirebaseUser user = auth.getCurrentUser();
                     checkMode(user.getEmail());
-
                 }
             }
         });
@@ -371,6 +317,5 @@ public class LoginActivity extends AppCompatActivity implements OnPasswordResetL
                 }
             }
         });
-
     }
 }

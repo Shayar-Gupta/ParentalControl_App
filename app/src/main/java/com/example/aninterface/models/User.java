@@ -31,12 +31,12 @@ public class User {
         this.email = email;
     }
 
-    public String getProfileImage() {
-        return profileImage;
-    }
+//    public String getProfileImage() {
+//        return profileImage;
+//    }
 
-    public void setProfileImage(String profileImage) {
-        this.profileImage = profileImage;
-    }
+//    public void setProfileImage(String profileImage) {
+//        this.profileImage = profileImage;
+//    }
 
 }

@@ -5,13 +5,16 @@ import java.util.HashMap;
 
 public class Child extends User {
     private String parentEmail;
+
+    private String name;
+    private String email;
     private ArrayList<App> apps = new ArrayList<>();
     private ArrayList<Contact> Contacts = new ArrayList<>();
     private Location location;
     private HashMap<String, Message> messages = new HashMap<>();
     private HashMap<String, Call> calls = new HashMap<>();
     private ScreenLock screenLock;
-    private String profileImage;
+//    private String profileImage;
     private boolean appDeleted;
 
     public Child() {
@@ -21,6 +24,12 @@ public class Child extends User {
         super(name, email);
         this.parentEmail = parentEmail;
     }
+
+//    public Child(String name, String email) {
+//        this.name = name;
+//        this.email = email;
+//    }
+
 
     public String getParentEmail() {
         return parentEmail;
@@ -78,15 +87,15 @@ public class Child extends User {
         this.screenLock = screenLock;
     }
 
-    @Override
-    public String getProfileImage() {
-        return profileImage;
-    }
-
-    @Override
-    public void setProfileImage(String profileImage) {
-        this.profileImage = profileImage;
-    }
+//    @Override
+//    public String getProfileImage() {
+//        return profileImage;
+//    }
+//
+//    @Override
+//    public void setProfileImage(String profileImage) {
+//        this.profileImage = profileImage;
+//    }
 
     public boolean isAppDeleted() {
         return appDeleted;

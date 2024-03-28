@@ -7,7 +7,7 @@ public class Constant {
     public static final int GEO_FENCING_NOTIFICATION_ID = 922;
     public static final int DEVICE_ADMIN_REQUEST_CODE = 38;
     public static final int DEVICE_ADMIN_ENABLE_LOCK = 27;
-    public static final int RC_SIGN_IN = 29;
+    public static final int RC_SIGN_IN = 40;
     public static final String CHILD_APP_NAME_EXTRA = " com.example.aninterface.utils.CHILD_APP_NAME_EXTRA";
     public static final int APP_LOCK_FRAGMENT_REQUEST_CODE = 10;
     public static final String RECOVER_PASSWORD_FRAGMENT = " com.example.aninterface.utils.RECOVER_PASSWORD_FRAGMENT";
@@ -51,7 +51,7 @@ public class Constant {
     public static final int PERMISSIONS_LOCATION_FRAGMENT = 3;
     public static final int PERMISSIONS_SETTINGS_FRAGMENT = 4;
     public static final int PERMISSIONS_FRAGMENTS_FINISH = 5;
-    public static final String KID_SAFE_PREFS = " com.example.aninterface.utils.KID_SAFE_PREFS";
+    public static final String NAZAR_PREFS = " com.example.aninterface.utils.NAZAR_PREFS";
     public static final String CHILD_FIRST_LAUNCH = " com.example.aninterface.utils.CHILD_FIRST_LAUNCH";
 
     public static final String CONFIRMATION_FRAGMENT_TAG = " com.example.aninterface.utils.CONFIRMATION_FRAGMENT_TAG";

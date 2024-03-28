@@ -24,22 +24,21 @@
                 android:gravity="center"
                 android:orientation="vertical">-->
 
-    <ProgressBar
-        android:id="@+id/progressBarParentSignedInActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:indeterminate="true"
-        android:visibility="gone"
-        android:progressTint="@color/darkest_blue"
-        tools:visibility="visible" />
+<!--    <ProgressBar-->
+<!--        android:id="@+id/progressBarParentSignedInActivity"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:indeterminate="true"-->
+<!--        android:visibility="gone"-->
+<!--        android:progressTint="@color/darkest_blue"-->
+<!--        tools:visibility="visible" />-->
 
     <LinearLayout
         android:id="@+id/linearLayoutParentSignedInActivity"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:visibility="gone"
         tools:visibility="visible">
 
         <de.hdodenhof.circleimageview.CircleImageView

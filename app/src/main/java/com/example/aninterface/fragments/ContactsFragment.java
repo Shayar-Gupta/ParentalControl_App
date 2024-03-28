@@ -15,7 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.aninterface.Adapter.ContactsAdapter;
+import com.example.aninterface.adapter.ContactsAdapter;
 import com.example.aninterface.R;
 import com.example.aninterface.interfaces.OnContactClickListener;
 import com.example.aninterface.models.Contact;
