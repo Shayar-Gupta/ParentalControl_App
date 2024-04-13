@@ -11,7 +11,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
 import com.example.aninterface.R;
-import com.example.aninterface.activity.MainPermissionActivity;
 
 public class PermissionExplanationDialogFragment extends DialogFragment {
 

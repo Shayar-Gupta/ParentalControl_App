@@ -19,6 +19,20 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+//
+//        // Firebase initialization
+//        try {
+//            FileInputStream serviceAccount = new FileInputStream("D:\\Information Technology\\InterfaceGUI\\Interface\\app\\logininterface-cffd1-firebase-adminsdk-q0c9y-6f431c3fea.json");
+//
+//            FirebaseOptions options = new FirebaseOptions.Builder()
+//                    .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+//                    .setDatabaseUrl("https://logininterface-cffd1-default-rtdb.firebaseio.com")
+//                    .build();
+//
+//            FirebaseApp.initializeApp(options);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
         ImageView logoImage = findViewById(R.id.splashimage);
         ImageView canva_logo = findViewById(R.id.canva_image);

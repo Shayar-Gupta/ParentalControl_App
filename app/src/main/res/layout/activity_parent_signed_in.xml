@@ -10,7 +10,24 @@
     android:orientation="vertical"
     tools:context="activity.ParentSignedInActivity">
 
-    <include layout="@layout/toolbar" />
+    <FrameLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:layoutDirection="locale"
+        android:padding="@dimen/padding_8dp">
+
+        <ImageButton
+            android:id="@+id/btnSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_settings" />
+
+    </FrameLayout>
+
 
     <!--    <ScrollView
             android:layout_width="fill_parent"
@@ -103,6 +120,7 @@
             android:id="@+id/recyclerViewChilds"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+
 
     </LinearLayout>
 

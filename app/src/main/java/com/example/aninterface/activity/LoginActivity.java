@@ -256,7 +256,7 @@ public class LoginActivity extends AppCompatActivity implements OnPasswordResetL
     }
 
     private void startChildSignedInActivity() {
-        Intent intent = new Intent(this, ChildSignedInActivity.class);
+        Intent intent = new Intent(this, MainPermissionActivity.class);
         startActivity(intent);
         finish(); // Finish the current LoginActivity so user can't go back to it after logging in
     }

@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -25,7 +26,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,21 +35,20 @@ import com.google.firebase.database.ValueEventListener;
 
 public class SignUpActivity extends AppCompatActivity implements OnConfirmationListener, OnGoogleChildSignUp {
     private static final String TAG = "SignUpActivity";
-
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private FirebaseAuth auth;
-
     private EditText txtSignUpEmail;
     private EditText txtParentEmail;
     private EditText txtSignUpPassword;
     private EditText txtSignUpName;
     private Button btnSignUp;
-
+    private ImageView imgProfile;
     private String uid;
     private boolean parent = true;
     private boolean validParent = false;
-
+    public String email;
+    public String password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +63,7 @@ public class SignUpActivity extends AppCompatActivity implements OnConfirmationL
 
         txtSignUpEmail = findViewById(R.id.txtSignUpEmail);
         txtParentEmail = findViewById(R.id.txtParentEmail);
+        imgProfile = findViewById(R.id.imgProfile);
         txtParentEmail.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -91,19 +91,17 @@ public class SignUpActivity extends AppCompatActivity implements OnConfirmationL
         });
         if (!parent) {
             txtParentEmail.setVisibility(View.VISIBLE);
+            imgProfile.setImageResource(R.drawable.ideogram_child);
         }
 
         txtSignUpPassword = findViewById(R.id.txtSignUpPassword);
         txtSignUpName = findViewById(R.id.txtSignUpName);
 
         btnSignUp = findViewById(R.id.btnSignUp);
-        btnSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String email = txtSignUpEmail.getText().toString().toLowerCase();
-                String password = txtSignUpPassword.getText().toString();
-                signUp(email, password);
-            }
+        btnSignUp.setOnClickListener(v -> {
+            email = txtSignUpEmail.getText().toString().toLowerCase().trim();
+            password = txtSignUpPassword.getText().toString();
+            signUp(email, password);
         });
     }
 
@@ -117,6 +115,7 @@ public class SignUpActivity extends AppCompatActivity implements OnConfirmationL
                     stopLoadingFragment(loadingDialogFragment);
                     if (task.isSuccessful()) {
                         signUpRoutine(txtParentEmail.getText().toString().toLowerCase());
+                        Toast.makeText(SignUpActivity.this, "Jaa Login Kar", Toast.LENGTH_SHORT).show();
                     } else {
                         String errorCode = task.getException().getMessage();
                         switch (errorCode) {
@@ -137,67 +136,6 @@ public class SignUpActivity extends AppCompatActivity implements OnConfirmationL
             });
         }
     }
-
-//    private void signUp(String email, String password) {
-//        if (isValid()) {
-//            final LoadingDialogFragment loadingDialogFragment = new LoadingDialogFragment();
-//            startLoadingFragment(loadingDialogFragment);
-//            auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-//                @Override
-//                public void onComplete(@NonNull Task<AuthResult> task) {
-//                    stopLoadingFragment(loadingDialogFragment);
-//                    if (task.isSuccessful()) {
-//                        String parentEmail = txtParentEmail.getText().toString().toLowerCase();
-//                        checkChildEmailExistenceAndSignUp(parentEmail);
-//                    } else {
-//                        // Handle sign-up failure
-//                        handleSignUpFailure(task.getException());
-//                    }
-//                }
-//            });
-//        }
-//    }
-//
-//    private void checkChildEmailExistenceAndSignUp(final String parentEmail) {
-//        final String childEmail = txtSignUpEmail.getText().toString().toLowerCase();
-//        databaseReference.child("childs").orderByChild("email").equalTo(childEmail).addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                if (dataSnapshot.exists()) {
-//                    // Child email already exists
-//                    Toast.makeText(SignUpActivity.this, "Child with this email already exists", Toast.LENGTH_SHORT).show();
-//                } else {
-//                    // Child email doesn't exist, proceed with sign-up
-//                    signUpRoutine(parentEmail); // Call signUpRoutine here
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//                // Handle database error
-//                Toast.makeText(SignUpActivity.this, "Failed to check child email existence: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//    }
-
-
-//    private void handleSignUpFailure(Exception exception) {
-//        String errorCode = ((FirebaseAuthException) exception).getErrorCode();
-//        switch (errorCode) {
-//            case "ERROR_INVALID_EMAIL":
-//                txtSignUpEmail.setError(getString(R.string.enter_valid_email));
-//                break;
-//            case "ERROR_EMAIL_ALREADY_IN_USE":
-//                txtSignUpEmail.setError(getString(R.string.email_is_already_in_use));
-//                break;
-//            case "ERROR_WEAK_PASSWORD":
-//                txtSignUpPassword.setError(getString(R.string.weak_password));
-//                break;
-//            default:
-//                Toast.makeText(SignUpActivity.this, getString(R.string.sign_up_failed), Toast.LENGTH_SHORT).show();
-//        }
-//    }
-
 
     private void signUpRoutine(String parentEmail) {
         uid = auth.getCurrentUser().getUid();
@@ -278,5 +216,3 @@ public class SignUpActivity extends AppCompatActivity implements OnConfirmationL
         signUpRoutine(parentEmail);
     }
 }
-
-

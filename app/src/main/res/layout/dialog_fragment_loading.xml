@@ -3,16 +3,17 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:background="@color/white"
+    android:background="@drawable/itemchildbg"
     android:gravity="center"
     android:layoutDirection="locale"
     android:orientation="horizontal"
+
     android:padding="@dimen/padding_8dp">
 
     <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:progressTint="@color/darkest_blue"/>
+        android:progressTint="@color/lightest_blue"/>
 
     <TextView
         android:layout_width="match_parent"
