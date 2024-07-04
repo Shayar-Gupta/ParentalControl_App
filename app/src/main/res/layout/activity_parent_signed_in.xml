@@ -10,7 +10,46 @@
     android:orientation="vertical"
     tools:context="activity.ParentSignedInActivity">
 
-    <include layout="@layout/basic_parent_toolbar" />
+    <FrameLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:layoutDirection="locale"
+        android:padding="@dimen/padding_8dp">
+
+        <ImageButton
+            android:id="@+id/btnSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_settings" />
+
+    </FrameLayout>
+
+
+    <!--    <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:orientation="vertical">-->
+
+<!--    <ProgressBar-->
+<!--        android:id="@+id/progressBarParentSignedInActivity"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:indeterminate="true"-->
+<!--        android:visibility="gone"-->
+<!--        android:progressTint="@color/darkest_blue"-->
+<!--        tools:visibility="visible" />-->
 
     <LinearLayout
         android:id="@+id/linearLayoutParentSignedInActivity"
@@ -73,38 +112,14 @@
         <TextView
             android:id="@+id/txtNoKids"
             style="@style/TextViewNoElements"
-            android:textColor="@color/darkest_blue"
             android:layout_margin="@dimen/margin_24dp"
             android:text="@string/no_kids_added_yet"
             tools:visibility="visible" />
 
-        <RelativeLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewChilds"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/recyclerAddChild">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_view_id"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/btnAddChild"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="21dp"
-                android:layout_marginTop="21dp"
-                android:layout_marginEnd="21dp"
-                android:layout_marginBottom="21dp"
-                android:elevation="8dp"
-                android:src="@drawable/baseline_add_24"
-                android:tint="@color/darkest_blue" />
-
-        </RelativeLayout>
+            android:layout_height="match_parent" />
 
 
     </LinearLayout>

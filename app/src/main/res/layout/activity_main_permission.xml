@@ -55,6 +55,7 @@
                         android:textColor="@color/darkest_blue" />
 
                     <Switch
+                        android:id="@+id/switchSendSMSPermission"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -92,6 +93,7 @@
                         android:layout_marginStart="10dp"/>
 
                     <Switch
+                        android:id="@+id/switchReadSMSPermission"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -129,6 +131,7 @@
                         android:layout_marginStart="10dp"/>
 
                     <Switch
+                        android:id="@+id/switchReceiveSMSPermission"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -177,6 +180,7 @@
                         android:textColor="@color/darkest_blue" />
 
                     <Switch
+                        android:id="@+id/switchPhoneStatePermission"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -214,6 +218,7 @@
                         android:layout_marginStart="10dp"/>
 
                     <Switch
+                        android:id="@+id/switchReadCallLogsPermission"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -251,6 +256,7 @@
                         android:layout_marginStart="10dp"/>
 
                     <Switch
+                        android:id="@+id/switchReadContactsPermission"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -299,6 +305,7 @@
                         android:textColor="@color/darkest_blue" />
 
                     <Switch
+                        android:id="@+id/switchWriteSettingsPermission"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -336,6 +343,7 @@
                         android:layout_marginStart="10dp"/>
 
                     <Switch
+                        android:id="@+id/switchOverlayPermission"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -373,6 +381,7 @@
                         android:layout_marginStart="10dp"/>
 
                     <Switch
+                        android:id="@+id/switchPackageUsagePermission"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -408,6 +417,7 @@
                         android:layout_marginStart="10dp"/>
 
                     <Switch
+                        android:id="@+id/switchDeviceAdminPermission"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -457,6 +467,7 @@
                         android:textColor="@color/darkest_blue" />
 
                     <Switch
+                        android:id="@+id/switchLocationPermission"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"

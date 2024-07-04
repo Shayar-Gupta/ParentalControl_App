@@ -1,6 +1,5 @@
 package com.example.aninterface.dialogfragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +11,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
 import com.example.aninterface.R;
-import com.example.aninterface.activity.MainPermissionActivity;
 
 public class PermissionExplanationDialogFragment extends DialogFragment {
 
